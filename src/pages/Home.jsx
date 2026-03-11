@@ -339,6 +339,8 @@ const Home = () => {
       {/* ── WORK PREVIEW ── */}
       <section style={{ borderBottom: '1px solid var(--border)' }}>
         <div style={{ ...W, padding: 'clamp(64px, 8vw, 112px) clamp(24px, 5vw, 64px)' }}>
+
+          {/* Header */}
           <div className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '16px' }}>
             <div>
               <SectionLabel>Selected Work</SectionLabel>
@@ -354,39 +356,104 @@ const Home = () => {
               onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-secondary)' }}
             >View All →</button>
           </div>
+
+          {/* Cards grid */}
           <div className="reveal" style={{
-            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '1px', backgroundColor: 'var(--border)', border: '1px solid var(--border)',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '20px',
           }}>
             {sampleWork.map((w) => (
-              <div key={w.title} style={{
-                backgroundColor: 'var(--bg-primary)', padding: 'clamp(28px, 3.5vw, 44px)',
-                cursor: 'pointer', transition: 'background-color 0.25s ease',
-                display: 'flex', flexDirection: 'column', gap: '20px',
-              }}
+              <div key={w.title}
                 onClick={() => navigate('/work')}
-                onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'}
-                onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--bg-primary)'}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = 'rgba(45,212,191,0.35)'
+                  e.currentTarget.style.transform = 'translateY(-4px)'
+                  e.currentTarget.querySelector('.wc-arrow').style.opacity = '1'
+                  e.currentTarget.querySelector('.wc-arrow').style.transform = 'translate(2px, -2px)'
+                  e.currentTarget.querySelector('.wc-num').style.opacity = '0.12'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = 'var(--border)'
+                  e.currentTarget.style.transform = 'translateY(0)'
+                  e.currentTarget.querySelector('.wc-arrow').style.opacity = '0'
+                  e.currentTarget.querySelector('.wc-arrow').style.transform = 'translate(0, 0)'
+                  e.currentTarget.querySelector('.wc-num').style.opacity = '0.06'
+                }}
+                style={{
+                  position: 'relative', overflow: 'hidden',
+                  backgroundColor: 'var(--bg-secondary)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '12px',
+                  padding: 'clamp(24px, 3vw, 36px)',
+                  cursor: 'pointer',
+                  display: 'flex', flexDirection: 'column', gap: '0',
+                  transition: 'border-color 0.25s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1)',
+                  minHeight: '340px',
+                }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>{w.industry}</span>
+                {/* Ghost number watermark */}
+                <span className="wc-num" style={{
+                  position: 'absolute', bottom: '-12px', right: '16px',
+                  fontFamily: 'var(--font-display)', fontSize: '7rem', fontWeight: 400,
+                  color: 'var(--teal)', opacity: 0.06, lineHeight: 1,
+                  letterSpacing: '-0.04em', userSelect: 'none', pointerEvents: 'none',
+                  transition: 'opacity 0.3s ease',
+                }}>{w.num}</span>
+
+                {/* Top row */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '28px' }}>
                   <span style={{
-                    fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 500,
+                    fontFamily: 'var(--font-body)', fontSize: '0.65rem', fontWeight: 500,
+                    letterSpacing: '0.12em', textTransform: 'uppercase',
+                    color: 'var(--text-muted)',
+                  }}>{w.year}</span>
+                  <span style={{
+                    fontFamily: 'var(--font-body)', fontSize: '0.65rem', fontWeight: 500,
                     letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--teal)',
-                    border: '1px solid rgba(45,212,191,0.2)', padding: '4px 12px', borderRadius: '100px',
+                    border: '1px solid rgba(45,212,191,0.25)', padding: '3px 11px', borderRadius: '100px',
+                    backgroundColor: 'rgba(45,212,191,0.06)',
                   }}>{w.tag}</span>
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 1.7vw, 1.35rem)', fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>{w.title}</h3>
-                <div style={{ width: '100%', height: '1px', backgroundColor: 'var(--border)' }} />
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+
+                {/* Title */}
+                <h3 style={{
+                  fontFamily: 'var(--font-display)', fontSize: 'clamp(1.2rem, 1.8vw, 1.5rem)',
+                  fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.03em',
+                  lineHeight: 1.15, marginBottom: '6px',
+                }}>{w.title}</h3>
+                <p style={{
+                  fontFamily: 'var(--font-body)', fontSize: '0.72rem', fontWeight: 500,
+                  letterSpacing: '0.1em', textTransform: 'uppercase',
+                  color: 'var(--text-muted)', marginBottom: '24px',
+                }}>{w.industry}</p>
+
+                {/* Divider */}
+                <div style={{ width: '100%', height: '1px', backgroundColor: 'var(--border)', marginBottom: '24px' }} />
+
+                {/* Problem + Solution stacked */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '18px', flex: 1 }}>
                   {[['Problem', w.problem], ['Solution', w.solution]].map(([lbl, txt]) => (
-                    <div key={lbl}>
-                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: '8px' }}>{lbl}</p>
-                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.88rem', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{txt}</p>
+                    <div key={lbl} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                      <span style={{
+                        width: '5px', height: '5px', borderRadius: '50%', flexShrink: 0,
+                        backgroundColor: lbl === 'Solution' ? 'var(--teal)' : 'var(--text-muted)',
+                        marginTop: '7px',
+                      }} />
+                      <div>
+                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.62rem', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: lbl === 'Solution' ? 'var(--teal)' : 'var(--text-muted)', marginBottom: '4px' }}>{lbl}</p>
+                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.88rem', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{txt}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
-                <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 400, color: 'var(--text-muted)', marginTop: 'auto' }}>{w.year}</span>
+
+                {/* Arrow */}
+                <span className="wc-arrow" style={{
+                  position: 'absolute', top: '20px', right: '20px',
+                  color: 'var(--teal)', fontSize: '1rem',
+                  opacity: 0, transition: 'opacity 0.2s ease, transform 0.2s ease',
+                }}>↗</span>
               </div>
             ))}
           </div>
