@@ -205,16 +205,16 @@ const Home = () => {
 
       {/* ── ABOUT ── */}
       <section style={{ borderBottom: '1px solid var(--border)' }}>
-        <div style={{ ...W, padding: 'clamp(56px, 7vw, 96px) clamp(24px, 5vw, 64px)' }}>
-          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(40px, 6vw, 96px)', alignItems: 'start' }}>
+        <div style={{ ...W, padding: 'clamp(64px, 8vw, 112px) clamp(24px, 5vw, 64px)' }}>
+          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(40px, 6vw, 96px)', alignItems: 'start' }}>
             <div>
               <SectionLabel>About Kerna</SectionLabel>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>
                 Built for businesses<br />that mean business.
               </h2>
             </div>
             <div style={{ paddingTop: '4px' }}>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.93rem', color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '32px' }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(1rem, 1.4vw, 1.1rem)', color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '36px' }}>
                 Kerna is a lean, strategy-driven PR and marketing agency for small businesses that want to look professional, move fast, and grow without burning money.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -224,13 +224,13 @@ const Home = () => {
                   { label: 'What We Solve', text: 'Weak presence, scattered branding, confusing marketing.' },
                 ].map(({ label, text }, i) => (
                   <div key={label} style={{
-                    display: 'grid', gridTemplateColumns: '100px 1fr', gap: '20px',
-                    padding: '16px 0',
+                    display: 'grid', gridTemplateColumns: '110px 1fr', gap: '24px',
+                    padding: '20px 0',
                     borderTop: '1px solid var(--border)',
                     borderBottom: i === 2 ? '1px solid var(--border)' : 'none',
                   }}>
-                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.63rem', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', paddingTop: '2px' }}>{label}</span>
-                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.88rem', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{text}</p>
+                    <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', paddingTop: '3px' }}>{label}</span>
+                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.97rem', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.75 }}>{text}</p>
                   </div>
                 ))}
               </div>
@@ -241,19 +241,19 @@ const Home = () => {
 
       {/* ── SERVICES ── */}
       <section style={{ borderBottom: '1px solid var(--border)', backgroundColor: 'var(--bg-secondary)' }}>
-        <div style={{ ...W, padding: 'clamp(56px, 7vw, 96px) clamp(24px, 5vw, 64px)' }}>
-          <div className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '16px' }}>
+        <div style={{ ...W, padding: 'clamp(64px, 8vw, 112px) clamp(24px, 5vw, 64px)' }}>
+          <div className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '16px' }}>
             <div>
               <SectionLabel>Services</SectionLabel>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>What we do.</h2>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>What we do.</h2>
             </div>
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.63rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>07 Services</span>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>07 Services</span>
           </div>
           <div className="reveal">
             {services.map((s, i) => (
               <div key={s.num} style={{
-                display: 'grid', gridTemplateColumns: '44px 1fr auto', gap: '20px', alignItems: 'center',
-                padding: 'clamp(14px, 2vw, 20px) 0',
+                display: 'grid', gridTemplateColumns: '56px 1fr auto', gap: '24px', alignItems: 'center',
+                padding: 'clamp(18px, 2.5vw, 26px) 0',
                 borderTop: i === 0 ? '1px solid var(--border)' : 'none',
                 borderBottom: '1px solid var(--border)',
                 transition: 'padding-left 0.25s ease', cursor: 'default',
@@ -269,9 +269,9 @@ const Home = () => {
                   e.currentTarget.querySelector('.sv-arrow').style.opacity = '0'
                 }}
               >
-                <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.63rem', fontWeight: 500, color: 'var(--text-muted)', letterSpacing: '0.1em' }}>{s.num}</span>
-                <span className="sv" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(0.95rem, 1.5vw, 1.2rem)', fontWeight: 400, color: 'var(--text-primary)', transition: 'color 0.25s ease' }}>{s.title}</span>
-                <span className="sv-arrow" style={{ fontSize: '0.85rem', color: 'var(--teal)', opacity: 0, transition: 'opacity 0.25s ease', flexShrink: 0 }}>→</span>
+                <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 500, color: 'var(--text-muted)', letterSpacing: '0.1em' }}>{s.num}</span>
+                <span className="sv" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', fontWeight: 400, color: 'var(--text-primary)', transition: 'color 0.25s ease' }}>{s.title}</span>
+                <span className="sv-arrow" style={{ fontSize: '1rem', color: 'var(--teal)', opacity: 0, transition: 'opacity 0.25s ease', flexShrink: 0 }}>→</span>
               </div>
             ))}
           </div>
@@ -280,29 +280,29 @@ const Home = () => {
 
       {/* ── PROCESS ── */}
       <section style={{ borderBottom: '1px solid var(--border)' }}>
-        <div style={{ ...W, padding: 'clamp(56px, 7vw, 96px) clamp(24px, 5vw, 64px)' }}>
-          <div className="reveal" style={{ marginBottom: '40px' }}>
+        <div style={{ ...W, padding: 'clamp(64px, 8vw, 112px) clamp(24px, 5vw, 64px)' }}>
+          <div className="reveal" style={{ marginBottom: '48px' }}>
             <SectionLabel>Process</SectionLabel>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>How we work.</h2>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>How we work.</h2>
           </div>
           <div className="reveal" style={{
-            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
             gap: '1px', backgroundColor: 'var(--border)', border: '1px solid var(--border)',
           }}>
             {steps.map((step) => (
               <div key={step.num} style={{
                 backgroundColor: 'var(--bg-primary)',
-                padding: 'clamp(28px, 3.5vw, 44px) clamp(20px, 2.5vw, 32px)',
-                display: 'flex', flexDirection: 'column', gap: '14px',
+                padding: 'clamp(32px, 4vw, 52px) clamp(24px, 3vw, 36px)',
+                display: 'flex', flexDirection: 'column', gap: '16px',
                 transition: 'background-color 0.25s ease',
               }}
                 onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'}
                 onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--bg-primary)'}
               >
-                <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.63rem', fontWeight: 500, color: 'var(--teal)', letterSpacing: '0.1em' }}>{step.num}</span>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)', fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>{step.name}</h3>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.83rem', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.75 }}>{step.desc}</p>
-                <span style={{ width: '16px', height: '1px', backgroundColor: 'var(--teal)', marginTop: 'auto', opacity: 0.6 }} />
+                <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 500, color: 'var(--teal)', letterSpacing: '0.1em' }}>{step.num}</span>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.15rem, 1.8vw, 1.4rem)', fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>{step.name}</h3>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.88rem, 1.1vw, 0.97rem)', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.75 }}>{step.desc}</p>
+                <span style={{ width: '20px', height: '1px', backgroundColor: 'var(--teal)', marginTop: 'auto', opacity: 0.6 }} />
               </div>
             ))}
           </div>
@@ -311,16 +311,16 @@ const Home = () => {
 
       {/* ── WHY KERNA ── */}
       <section style={{ borderBottom: '1px solid var(--border)', backgroundColor: 'var(--bg-secondary)' }}>
-        <div style={{ ...W, padding: 'clamp(56px, 7vw, 96px) clamp(24px, 5vw, 64px)' }}>
-          <div className="reveal" style={{ marginBottom: '40px' }}>
+        <div style={{ ...W, padding: 'clamp(64px, 8vw, 112px) clamp(24px, 5vw, 64px)' }}>
+          <div className="reveal" style={{ marginBottom: '48px' }}>
             <SectionLabel>Why Us</SectionLabel>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>Why choose Kerna.</h2>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>Why choose Kerna.</h2>
           </div>
           <div className="reveal">
             {reasons.map((r, i) => (
               <div key={r.heading} style={{
-                display: 'grid', gridTemplateColumns: '1fr clamp(200px, 30%, 340px)', gap: '32px', alignItems: 'start',
-                padding: 'clamp(18px, 2.5vw, 26px) 0',
+                display: 'grid', gridTemplateColumns: '1fr clamp(220px, 35%, 400px)', gap: '40px', alignItems: 'start',
+                padding: 'clamp(22px, 3vw, 32px) 0',
                 borderTop: i === 0 ? '1px solid var(--border)' : 'none',
                 borderBottom: '1px solid var(--border)',
                 transition: 'all 0.2s ease', cursor: 'default',
@@ -328,8 +328,8 @@ const Home = () => {
                 onMouseEnter={e => { e.currentTarget.style.backgroundColor = 'var(--bg-card)'; e.currentTarget.style.paddingLeft = '10px' }}
                 onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.paddingLeft = '0' }}
               >
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>{r.heading}</h3>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.75 }}>{r.desc}</p>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.05rem, 1.6vw, 1.3rem)', fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>{r.heading}</h3>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.88rem, 1.1vw, 0.97rem)', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.75 }}>{r.desc}</p>
               </div>
             ))}
           </div>
@@ -338,55 +338,55 @@ const Home = () => {
 
       {/* ── WORK PREVIEW ── */}
       <section style={{ borderBottom: '1px solid var(--border)' }}>
-        <div style={{ ...W, padding: 'clamp(56px, 7vw, 96px) clamp(24px, 5vw, 64px)' }}>
-          <div className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '16px' }}>
+        <div style={{ ...W, padding: 'clamp(64px, 8vw, 112px) clamp(24px, 5vw, 64px)' }}>
+          <div className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '16px' }}>
             <div>
               <SectionLabel>Selected Work</SectionLabel>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>Sample projects.</h2>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>Sample projects.</h2>
             </div>
             <button onClick={() => navigate('/work')} style={{
               backgroundColor: 'transparent', color: 'var(--text-secondary)',
-              padding: '10px 20px', border: '1px solid var(--border)',
+              padding: '10px 22px', border: '1px solid var(--border)',
               borderRadius: '100px', cursor: 'pointer', fontFamily: 'var(--font-body)',
-              fontSize: '0.8rem', fontWeight: 400, transition: 'all 0.2s ease',
+              fontSize: '0.85rem', fontWeight: 400, transition: 'all 0.2s ease',
             }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--teal)'; e.currentTarget.style.color = 'var(--teal)' }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-secondary)' }}
             >View All →</button>
           </div>
           <div className="reveal" style={{
-            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '1px', backgroundColor: 'var(--border)', border: '1px solid var(--border)',
           }}>
             {sampleWork.map((w) => (
               <div key={w.title} style={{
-                backgroundColor: 'var(--bg-primary)', padding: 'clamp(24px, 3vw, 36px)',
+                backgroundColor: 'var(--bg-primary)', padding: 'clamp(28px, 3.5vw, 44px)',
                 cursor: 'pointer', transition: 'background-color 0.25s ease',
-                display: 'flex', flexDirection: 'column', gap: '16px',
+                display: 'flex', flexDirection: 'column', gap: '20px',
               }}
                 onClick={() => navigate('/work')}
                 onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'}
                 onMouseLeave={e => e.currentTarget.style.backgroundColor = 'var(--bg-primary)'}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.63rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>{w.industry}</span>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>{w.industry}</span>
                   <span style={{
-                    fontFamily: 'var(--font-body)', fontSize: '0.63rem', fontWeight: 500,
+                    fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 500,
                     letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--teal)',
-                    border: '1px solid rgba(45,212,191,0.2)', padding: '3px 10px', borderRadius: '100px',
+                    border: '1px solid rgba(45,212,191,0.2)', padding: '4px 12px', borderRadius: '100px',
                   }}>{w.tag}</span>
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>{w.title}</h3>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 1.7vw, 1.35rem)', fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>{w.title}</h3>
                 <div style={{ width: '100%', height: '1px', backgroundColor: 'var(--border)' }} />
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                   {[['Problem', w.problem], ['Solution', w.solution]].map(([lbl, txt]) => (
                     <div key={lbl}>
-                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.6rem', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: '6px' }}>{lbl}</p>
-                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.8rem', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.65 }}>{txt}</p>
+                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: '8px' }}>{lbl}</p>
+                      <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.88rem', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{txt}</p>
                     </div>
                   ))}
                 </div>
-                <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.63rem', fontWeight: 400, color: 'var(--text-muted)', marginTop: 'auto' }}>{w.year}</span>
+                <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 400, color: 'var(--text-muted)', marginTop: 'auto' }}>{w.year}</span>
               </div>
             ))}
           </div>
@@ -395,17 +395,17 @@ const Home = () => {
 
       {/* ── CAREERS ── */}
       <section style={{ borderBottom: '1px solid var(--border)', backgroundColor: 'var(--bg-secondary)' }}>
-        <div style={{ ...W, padding: 'clamp(56px, 7vw, 96px) clamp(24px, 5vw, 64px)' }}>
-          <div className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '16px' }}>
+        <div style={{ ...W, padding: 'clamp(64px, 8vw, 112px) clamp(24px, 5vw, 64px)' }}>
+          <div className="reveal" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '48px', flexWrap: 'wrap', gap: '16px' }}>
             <div>
               <SectionLabel>Careers</SectionLabel>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>Grow with Kerna.</h2>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>Grow with Kerna.</h2>
             </div>
             <button onClick={() => navigate('/careers')} style={{
               backgroundColor: 'transparent', color: 'var(--text-secondary)',
-              padding: '10px 20px', border: '1px solid var(--border)',
+              padding: '10px 22px', border: '1px solid var(--border)',
               borderRadius: '100px', cursor: 'pointer', fontFamily: 'var(--font-body)',
-              fontSize: '0.8rem', fontWeight: 400, transition: 'all 0.2s ease',
+              fontSize: '0.85rem', fontWeight: 400, transition: 'all 0.2s ease',
             }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--teal)'; e.currentTarget.style.color = 'var(--teal)' }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-secondary)' }}
@@ -415,7 +415,7 @@ const Home = () => {
             {roles.map((r, i) => (
               <div key={r.title} style={{
                 display: 'grid', gridTemplateColumns: '1fr auto', gap: '24px', alignItems: 'center',
-                padding: 'clamp(18px, 2.5vw, 26px) 0',
+                padding: 'clamp(22px, 3vw, 32px) 0',
                 borderTop: i === 0 ? '1px solid var(--border)' : 'none',
                 borderBottom: '1px solid var(--border)',
                 cursor: 'pointer', transition: 'all 0.2s ease',
@@ -433,11 +433,11 @@ const Home = () => {
                 }}
               >
                 <div>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.63rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)', display: 'block', marginBottom: '6px' }}>{r.area} · 12 Weeks</span>
-                  <h3 className="rt" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.02em', marginBottom: '4px', transition: 'color 0.2s ease' }}>{r.title}</h3>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.83rem', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.65 }}>{r.desc}</p>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)', display: 'block', marginBottom: '8px' }}>{r.area} · 12 Weeks</span>
+                  <h3 className="rt" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 1.7vw, 1.35rem)', fontWeight: 400, color: 'var(--text-primary)', letterSpacing: '-0.02em', marginBottom: '6px', transition: 'color 0.2s ease' }}>{r.title}</h3>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 'clamp(0.88rem, 1.1vw, 0.97rem)', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.65 }}>{r.desc}</p>
                 </div>
-                <span className="ra" style={{ color: 'var(--teal)', fontSize: '1rem', opacity: 0, transition: 'opacity 0.2s ease', flexShrink: 0 }}>↗</span>
+                <span className="ra" style={{ color: 'var(--teal)', fontSize: '1.1rem', opacity: 0, transition: 'opacity 0.2s ease', flexShrink: 0 }}>↗</span>
               </div>
             ))}
           </div>
@@ -448,31 +448,31 @@ const Home = () => {
       <section>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
           <div className="reveal" style={{
-            padding: 'clamp(56px, 7vw, 96px) clamp(24px, 5vw, 64px)',
+            padding: 'clamp(64px, 8vw, 112px) clamp(24px, 5vw, 64px)',
             borderRight: '1px solid var(--border)',
-            display: 'flex', flexDirection: 'column', gap: '28px',
+            display: 'flex', flexDirection: 'column', gap: '32px',
           }}>
             <SectionLabel>Get In Touch</SectionLabel>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.15, color: 'var(--text-primary)' }}>
               Ready to spark something?
             </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {['+91 75696 12318', '+91 99496 86160'].map(num => (
                 <a key={num} href={`tel:${num.replace(/\s/g, '')}`} style={{
-                  fontFamily: 'var(--font-body)', fontSize: '0.95rem', fontWeight: 400,
+                  fontFamily: 'var(--font-body)', fontSize: '1.05rem', fontWeight: 400,
                   color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s ease',
                 }}
                   onMouseEnter={e => e.currentTarget.style.color = 'var(--teal)'}
                   onMouseLeave={e => e.currentTarget.style.color = 'var(--text-secondary)'}
                 >{num}</a>
               ))}
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.83rem', fontWeight: 400, color: 'var(--text-muted)', marginTop: '4px' }}>Marripalem, Visakhapatnam, AP</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', fontWeight: 400, color: 'var(--text-muted)', marginTop: '4px' }}>Marripalem, Visakhapatnam, AP</p>
             </div>
             <button onClick={() => navigate('/contact')} style={{
               backgroundColor: 'var(--teal)', color: '#0e0e0e',
-              padding: '11px 26px', border: 'none', borderRadius: '100px',
+              padding: '13px 30px', border: 'none', borderRadius: '100px',
               cursor: 'pointer', fontFamily: 'var(--font-body)',
-              fontSize: '0.82rem', fontWeight: 500, letterSpacing: '0.02em',
+              fontSize: '0.9rem', fontWeight: 500, letterSpacing: '0.02em',
               transition: 'all 0.2s ease', alignSelf: 'flex-start',
             }}
               onMouseEnter={e => { e.currentTarget.style.backgroundColor = 'var(--teal-dark)'; e.currentTarget.style.transform = 'translateY(-1px)' }}

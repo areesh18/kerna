@@ -96,15 +96,15 @@ const Contact = () => {
         <div style={{ overflow: 'hidden', marginBottom: '4px' }}>
           <h1 className="contact-h1-1" style={{
             fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 8vw, 7rem)',
-            fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 0.95,
+            fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 0.95,
             color: 'var(--text-primary)', opacity: 0,
           }}>Let's build something</h1>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '24px' }}>
           <div style={{ overflow: 'hidden' }}>
-            <h1 className="contact-h1-2" style={{
+            <h1 className="contact-h1-2 italic" style={{
               fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 8vw, 7rem)',
-              fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 0.95,
+              fontWeight: 500, letterSpacing: '-0.04em', lineHeight: 0.95,
               color: 'var(--teal)', opacity: 0,
             }}>together.</h1>
           </div>

@@ -97,7 +97,7 @@ const Careers = () => {
         <div style={{ overflow: 'hidden', marginBottom: '4px' }}>
           <h1 className="careers-h1-1" style={{
             fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 8vw, 7rem)',
-            fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 0.95,
+            fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 0.95,
             color: 'var(--text-primary)', opacity: 0,
           }}>Grow with</h1>
         </div>
@@ -105,7 +105,7 @@ const Careers = () => {
           <div style={{ overflow: 'hidden' }}>
             <h1 className="careers-h1-2" style={{
               fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 8vw, 7rem)',
-              fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 0.95,
+              fontWeight: 400, letterSpacing: '-0.01em', lineHeight: 0.95,
               color: 'var(--teal)', opacity: 0,
             }}>Kerna.</h1>
           </div>
@@ -298,7 +298,7 @@ const Careers = () => {
               <h2 style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2rem, 5vw, 4rem)',
-                fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1.0,
+                fontWeight: 400, letterSpacing: '-0.04em', lineHeight: 1.0,
                 color: 'var(--text-primary)',
               }}>
                 We'll find the<br /><span style={{ color: 'var(--teal)' }}>right fit.</span>
