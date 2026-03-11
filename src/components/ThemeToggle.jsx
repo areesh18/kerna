@@ -6,21 +6,28 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      title="Toggle theme"
+      title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
       style={{
-        background: 'var(--bg-card)',
+        width: '36px', height: '36px',
+        borderRadius: '50%',
         border: '1px solid var(--border)',
-        borderRadius: '20px',
-        padding: '6px 10px',
+        backgroundColor: 'var(--bg-card)',
         cursor: 'pointer',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '6px',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        fontSize: '0.9rem',
         transition: 'all 0.3s ease',
-        fontSize: '0.85rem',
+        flexShrink: 0,
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = 'var(--teal)'
+        e.currentTarget.style.transform = 'rotate(20deg)'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = 'var(--border)'
+        e.currentTarget.style.transform = 'rotate(0deg)'
       }}
     >
-      <span style={{ fontSize: '1rem' }}>{theme === 'dark' ? '☀️' : '🌙'}</span>
+      {theme === 'dark' ? '☀️' : '🌙'}
     </button>
   )
 }

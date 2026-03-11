@@ -1,219 +1,415 @@
-import { NavLink } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { NavLink } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  const footerRef = useRef(null)
+  const footerRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(footerRef.current,
-      { opacity: 0, y: 40 },
+    gsap.fromTo(
+      footerRef.current,
+      { opacity: 0, y: 60 },
       {
-        opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
-        scrollTrigger: { trigger: footerRef.current, start: 'top 95%' }
-      }
-    )
-  }, [])
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power4.out",
+        scrollTrigger: { trigger: footerRef.current, start: "top 95%" },
+      },
+    );
+  }, []);
 
   const links = [
-    { to: '/', label: 'Home' },
-    { to: '/work', label: 'Work' },
-    { to: '/careers', label: 'Careers' },
-    { to: '/contact', label: 'Contact' },
-  ]
+    { to: "/", label: "Home" },
+    { to: "/work", label: "Work" },
+    { to: "/careers", label: "Careers" },
+    { to: "/contact", label: "Contact" },
+  ];
 
-  const socials = [
-    { label: 'Instagram', href: '#' },
-    { label: 'LinkedIn', href: '#' },
-    { label: 'Twitter', href: '#' },
-  ]
+  const socials = ["Instagram", "LinkedIn", "Twitter"];
 
   return (
-    <footer ref={footerRef} style={{
-      backgroundColor: 'var(--bg-secondary)',
-      borderTop: '1px solid var(--border)',
-      paddingTop: '64px',
-      paddingBottom: '32px',
-      fontFamily: 'var(--font-body)',
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '0 24px',
-      }}>
-
-        {/* Top Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '48px',
-          marginBottom: '48px',
-        }}>
-
-          {/* Brand Col */}
-          <div style={{ maxWidth: '280px' }}>
-            <NavLink to="/" style={{ textDecoration: 'none' }}>
-              <span style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: '1.8rem',
-                fontWeight: 800,
-                color: 'var(--text-primary)',
-                letterSpacing: '-0.03em',
-              }}>
-                ker<span style={{ color: 'var(--teal)' }}>na</span>
-              </span>
-            </NavLink>
-            <p style={{
-              color: 'var(--text-secondary)',
-              fontSize: '0.9rem',
-              lineHeight: 1.7,
-              marginTop: '16px',
-            }}>
-              A lean, strategy-driven PR and marketing agency built for small businesses
-              that want to grow without burning money.
-            </p>
-            <p style={{
-              color: 'var(--teal)',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              marginTop: '12px',
-              fontStyle: 'italic',
-            }}>
-              Where Strategy Meets Spark.
-            </p>
-          </div>
-
-          {/* Navigation */}
-          <div>
-            <h4 style={{
-              fontFamily: 'var(--font-heading)',
-              fontSize: '0.8rem',
-              fontWeight: 700,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'var(--text-secondary)',
-              marginBottom: '20px',
-            }}>Navigation</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {links.map(({ to, label }) => (
-                <NavLink key={to} to={to} style={({ isActive }) => ({
-                  color: isActive ? 'var(--teal)' : 'var(--text-secondary)',
-                  textDecoration: 'none',
-                  fontSize: '0.95rem',
-                  transition: 'color 0.3s ease',
-                })}
-                  onMouseEnter={e => e.target.style.color = 'var(--teal)'}
-                  onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}
-                >
-                  {label}
-                </NavLink>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 style={{
-              fontFamily: 'var(--font-heading)',
-              fontSize: '0.8rem',
-              fontWeight: 700,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'var(--text-secondary)',
-              marginBottom: '20px',
-            }}>Contact</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <a href="tel:+917569612318" style={{
-                color: 'var(--text-secondary)',
-                textDecoration: 'none',
-                fontSize: '0.95rem',
-                transition: 'color 0.3s ease',
-              }}
-                onMouseEnter={e => e.target.style.color = 'var(--teal)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}
-              >
-                +91 75696 12318
-              </a>
-              <a href="tel:+919949686160" style={{
-                color: 'var(--text-secondary)',
-                textDecoration: 'none',
-                fontSize: '0.95rem',
-                transition: 'color 0.3s ease',
-              }}
-                onMouseEnter={e => e.target.style.color = 'var(--teal)'}
-                onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}
-              >
-                +91 99496 86160
-              </a>
-              <p style={{
-                color: 'var(--text-secondary)',
-                fontSize: '0.95rem',
-                lineHeight: 1.6,
-              }}>
-                Marripalem, Visakhapatnam,<br />Andhra Pradesh
-              </p>
-            </div>
-          </div>
-
-          {/* Socials */}
-          <div>
-            <h4 style={{
-              fontFamily: 'var(--font-heading)',
-              fontSize: '0.8rem',
-              fontWeight: 700,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'var(--text-secondary)',
-              marginBottom: '20px',
-            }}>Follow Us</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {socials.map(({ label, href }) => (
-                <a key={label} href={href} style={{
-                  color: 'var(--text-secondary)',
-                  textDecoration: 'none',
-                  fontSize: '0.95rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  transition: 'color 0.3s ease',
-                }}
-                  onMouseEnter={e => e.currentTarget.style.color = 'var(--teal)'}
-                  onMouseLeave={e => e.currentTarget.style.color = 'var(--text-secondary)'}
-                >
-                  <span style={{
-                    width: '6px',
-                    height: '6px',
-                    borderRadius: '50%',
-                    backgroundColor: 'var(--teal)',
-                    display: 'inline-block',
-                    flexShrink: 0,
-                  }} />
-                  {label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div style={{ borderTop: '1px solid var(--border)', paddingTop: '24px',
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          flexWrap: 'wrap', gap: '12px',
-        }}>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
-            © {new Date().getFullYear()} Kerna. All rights reserved.
-          </p>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
-            Built with strategy & spark.
-          </p>
-        </div>
-
+    <footer
+      ref={footerRef}
+      style={{
+        backgroundColor: "var(--bg-secondary)",
+        borderTop: "1px solid var(--border)",
+        fontFamily: "var(--font-body)",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Big background word */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-20px",
+          right: "-20px",
+          fontFamily: "var(--font-display)",
+          fontSize: "clamp(120px, 18vw, 220px)",
+          fontWeight: 700,
+          color: "var(--text-primary)",
+          opacity: 0.025,
+          letterSpacing: "-0.05em",
+          lineHeight: 1,
+          pointerEvents: "none",
+          userSelect: "none",
+        }}
+      >
+        kerna
       </div>
-    </footer>
-  )
-}
 
-export default Footer
+      {/* CTA Strip */}
+      <div
+        style={{
+          borderBottom: "1px solid var(--border)",
+          padding: "clamp(48px, 6vw, 80px) clamp(24px, 5vw, 80px)",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: "32px",
+          maxWidth: "1400px",
+          margin: "0 auto",
+        }}
+      >
+        <div>
+          <p
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(1.8rem, 4vw, 3rem)",
+              fontWeight: 700,
+              color: "var(--text-primary)",
+              letterSpacing: "-0.03em",
+              lineHeight: 1.1,
+            }}
+          >
+            Ready to grow?
+            <br />
+            <span style={{ color: "var(--teal)" }}>Let's talk.</span>
+          </p>
+        </div>
+        <NavLink
+          to="/contact"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "10px",
+            backgroundColor: "var(--teal)",
+            color: "#0e0e0e",
+            padding: "16px 32px",
+            borderRadius: "100px",
+            fontFamily: "var(--font-body)",
+            fontSize: "0.95rem",
+            fontWeight: 700,
+            textDecoration: "none",
+            transition: "all 0.3s ease",
+            whiteSpace: "nowrap",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "var(--teal-dark)";
+            e.currentTarget.style.transform = "translateY(-2px)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "var(--teal)";
+            e.currentTarget.style.transform = "translateY(0)";
+          }}
+        >
+          Work With Kerna
+          <span
+            style={{
+              width: "28px",
+              height: "28px",
+              backgroundColor: "rgba(0,0,0,0.15)",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "0.85rem",
+            }}
+          >
+            ↗
+          </span>
+        </NavLink>
+      </div>
+
+      {/* Main Footer Grid */}
+      <div
+        style={{
+          maxWidth: "1400px",
+          margin: "0 auto",
+          padding: "clamp(40px, 5vw, 64px) clamp(24px, 5vw, 80px)",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+          gap: "48px",
+        }}
+      >
+        {/* Brand */}
+        <div style={{ gridColumn: "span 2" }} className="footer-brand">
+          <NavLink
+            to="/"
+            style={{
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              marginBottom: "20px",
+            }}
+          >
+            <div
+              style={{
+                width: "28px",
+                height: "28px",
+                backgroundColor: "var(--teal)",
+                borderRadius: "5px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "0.8rem",
+                  fontWeight: 700,
+                  color: "#0e0e0e",
+                }}
+              >
+                K
+              </span>
+            </div>
+            <span
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "1.2rem",
+                fontWeight: 700,
+                color: "var(--text-primary)",
+                letterSpacing: "-0.04em",
+              }}
+            >
+              kerna
+            </span>
+          </NavLink>
+          <p
+            style={{
+              color: "var(--text-secondary)",
+              fontSize: "0.9rem",
+              lineHeight: 1.75,
+              maxWidth: "260px",
+            }}
+          >
+            Strategy-driven PR & marketing for small businesses that want to
+            punch above their weight.
+          </p>
+          <p
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "0.8rem",
+              fontWeight: 600,
+              color: "var(--teal)",
+              marginTop: "16px",
+              letterSpacing: "0.02em",
+            }}
+          >
+            Where Strategy Meets Spark.
+          </p>
+        </div>
+
+        {/* Nav */}
+        <div>
+          <p
+            style={{
+              fontSize: "0.7rem",
+              fontWeight: 700,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--text-muted)",
+              marginBottom: "20px",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            Pages
+          </p>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "14px" }}
+          >
+            {links.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className="anim-link"
+                style={({ isActive }) => ({
+                  color: isActive ? "var(--teal)" : "var(--text-secondary)",
+                  textDecoration: "none",
+                  fontSize: "0.95rem",
+                  fontWeight: 500,
+                  transition: "color 0.3s ease",
+                })}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "var(--text-primary)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "var(--text-secondary)")
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <p
+            style={{
+              fontSize: "0.7rem",
+              fontWeight: 700,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--text-muted)",
+              marginBottom: "20px",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            Contact
+          </p>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "14px" }}
+          >
+            {["+91 75696 12318", "+91 99496 86160"].map((num) => (
+              <a
+                key={num}
+                href={`tel:${num.replace(/\s/g, "")}`}
+                style={{
+                  color: "var(--text-secondary)",
+                  textDecoration: "none",
+                  fontSize: "0.95rem",
+                  fontWeight: 500,
+                  transition: "color 0.3s ease",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "var(--teal)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "var(--text-secondary)")
+                }
+              >
+                {num}
+              </a>
+            ))}
+            <p
+              style={{
+                color: "var(--text-secondary)",
+                fontSize: "0.9rem",
+                lineHeight: 1.6,
+              }}
+            >
+              Marripalem, Visakhapatnam,
+              <br />
+              Andhra Pradesh
+            </p>
+          </div>
+        </div>
+
+        {/* Socials */}
+        <div>
+          <p
+            style={{
+              fontSize: "0.7rem",
+              fontWeight: 700,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--text-muted)",
+              marginBottom: "20px",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            Follow
+          </p>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "14px" }}
+          >
+            {socials.map((s) => (
+              <a
+                key={s}
+                href="#"
+                style={{
+                  color: "var(--text-secondary)",
+                  textDecoration: "none",
+                  fontSize: "0.95rem",
+                  fontWeight: 500,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  transition: "color 0.3s ease",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "var(--teal)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "var(--text-secondary)")
+                }
+              >
+                <span
+                  style={{
+                    width: "4px",
+                    height: "4px",
+                    borderRadius: "50%",
+                    backgroundColor: "var(--teal)",
+                    flexShrink: 0,
+                  }}
+                />
+                {s}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div
+        style={{
+          maxWidth: "1400px",
+          margin: "0 auto",
+          padding: "20px clamp(24px, 5vw, 80px)",
+          borderTop: "1px solid var(--border)",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: "12px",
+        }}
+      >
+        <p
+          style={{
+            color: "var(--text-muted)",
+            fontSize: "0.8rem",
+            fontWeight: 500,
+          }}
+        >
+          © {new Date().getFullYear()} Kerna. All rights reserved.
+        </p>
+        <p
+          style={{
+            color: "var(--text-muted)",
+            fontSize: "0.8rem",
+            fontWeight: 500,
+          }}
+        >
+          Built with strategy & spark ✦
+        </p>
+      </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .footer-brand { grid-column: span 1 !important; }
+        }
+      `}</style>
+    </footer>
+  );
+};
+
+export default Footer;
