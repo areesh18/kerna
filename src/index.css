@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --teal: #2DD4BF;
+  --teal: #2dd4bf;
   --teal-dark: #1aa896;
   --teal-glow: rgba(45, 212, 191, 0.15);
-  --font-display: 'Clash Display', sans-serif;
-  --font-body: 'Satoshi', sans-serif;
+  --font-display: 'DM Sans', sans-serif;
+--font-body: 'DM Sans', sans-serif;
 }
 
 [data-theme="dark"] {
@@ -34,7 +34,9 @@
   --grain-opacity: 0.03;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -44,7 +46,9 @@ html {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -56,7 +60,7 @@ body {
 
 /* Grain texture overlay */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -66,7 +70,12 @@ body::before {
   background-size: 128px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 700;
 }
@@ -76,13 +85,20 @@ h1, h2, h3, h4, h5, h6 {
   color: #0e0e0e;
 }
 
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--bg-primary); }
-::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--teal);
+  border-radius: 2px;
+}
 
 /* Teal glow utility */
 .teal-glow {
-  text-shadow: 0 0 40px rgba(45,212,191,0.3);
+  text-shadow: 0 0 40px rgba(45, 212, 191, 0.3);
 }
 
 /* Horizontal rule style */
@@ -98,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 .anim-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -107,4 +123,6 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--teal);
   transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.anim-link:hover::after { width: 100%; }
+.anim-link:hover::after {
+  width: 100%;
+}
